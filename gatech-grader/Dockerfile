@@ -6,11 +6,6 @@ ENV NB_GID=100
 
 WORKDIR /tmp
 
-WORKDIR /tmp/async-nbgrader
-
-RUN pip install -U pip \
- && pip install .
-
 # enable create assignment extension
 RUN jupyter nbextension enable --sys-prefix create_assignment/main \
  && jupyter serverextension enable --sys-prefix nbgrader.server_extensions.formgrader
